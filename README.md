@@ -76,7 +76,11 @@ The *precommit* is done by *git hooks* by package [husky](https://github.com/typ
 npm run code:lint && npm run code:prettier
 ```
 
-## Techboloogies/tools
+### Continuous Integration
+
+Open the "Actions" tab of this repository to view the CI pipeline for each commit.
+
+## Technologies/tools
 
 * Node.js
 * Apollo Server
