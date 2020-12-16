@@ -42,7 +42,7 @@ npm run dev
 
 Open the browser at http://localhost:4000/ to view the GraphiQL UI.
 
-## Runing tests
+## Running tests
 
 ```bash
 npm test
