@@ -89,6 +89,7 @@ Open the "Actions" tab of this repository to view the CI pipeline for each commi
 * MongoDB
 * supertest
 * Mocha
+* Chai
 * ESLint
 * Prettier
 * Husky
