@@ -1,38 +1,48 @@
 
-# Phone-Book-Graphql [![BCH compliance](https://bettercodehub.com/edge/badge/fredmoreira/phone-book-graphql?branch=master)](https://bettercodehub.com/results/fredmoreira/phone-book-graphql) [![Known Vulnerabilities](https://snyk.io/test/github/fredmoreira/phone-book-graphql/badge.svg)](https://snyk.io/test/github/fredmoreira/phone-book-graphql)
-A simple API GraphQL for experiencing testing frameworks
- 
-## Github Actions [![Build | Lint | Test](https://github.com/fredmoreira/phone-book-graphql/workflows/Build%20%7C%20Lint%20%7C%20Test/badge.svg)](https://github.com/fredmoreira/phone-book-graphql/actions?query=workflow%3A%22Build+%7C+Lint+%7C+Test%22)
+[![Build | Lint | Test](https://github.com/fredmoreira/phone-book-graphql/workflows/Build%20%7C%20Lint%20%7C%20Test/badge.svg)](https://github.com/fredmoreira/phone-book-graphql/actions?query=workflow%3A%22Build+%7C+Lint+%7C+Test%22)
+# Chalkboard Challenge - Phone Book GraphQL API 📱📘
+
+A simple GraphQL API for a phone book.
 
 ## Requirements
+* Docker
+* Node
+* npm
 
-* MongoDB
-* Node & Npm
+## Quickstart setup
 
+These instructions will get you a copy of of the project up and running in development mode on your local machine.
 
-## Install && Run
-
-It follows one step by step showing how to get the API running.
-
-### Clone repository
+Clone repository:
 
 ```bash
-git clone https://github.com/fredmoreira/phone-book-graphql.git
+git clone https://github.com/matheuseabra/chalkboard-phone-book
+cd chalkboard-phone-book
 ```
 
-### Install 
+Install dependencies:
 
 ```bash
 npm i
 ```
 
-**If you don't have the MongoDB database installed on your local machine, remember to run it via command line or another way before running the command below.**
+### Running a MongoDB instance locally with Docker
+
+**If you don't have a local MongoDB instance installed on your machine, run it via a Docker container (must have Docker installed).**
 
 ```bash
-npm start
+docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no mongo
 ```
 
-## Runing integration tests
+### Start the API
+
+```bash
+npm run dev
+```
+
+Open the browser at http://localhost:4000/ to view the GraphiQL UI.
+
+## Runing tests
 
 ```bash
 npm test
@@ -60,14 +70,26 @@ npm run code:prettier
 npm run snyk-protect
 ```
 
-The *precommit* is done by *git hooks* by package [husky](https://github.com/typicode/husky).
-
-Therefore, whenever a *commit* is done, the following script will be executed:
+The *precommit* is done by *git hooks* by package [husky](https://github.com/typicode/husky). Whenever a *commit* is done, the following script will be executed:
 
 ```bash
 npm run code:lint && npm run code:prettier
 ```
 
-Any improvement will always be welcome.
+## Techboloogies/tools
 
-:)
+* Node.js
+* Apollo Server
+* GraphQL
+* Mongoose
+* MongoDB
+* supertest
+* Mocha
+* ESLint
+* Prettier
+* Husky
+* snyk
+* GitHub Actions
+
+## Lincense
+This project is lincensed under the MIT License.
