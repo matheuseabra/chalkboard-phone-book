@@ -1,0 +1,44 @@
+{
+  "name": "chalkboard-phone-book-graphql-api",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "ci": "start-server-and-test 4000 test",
+    "code:lint": "./node_modules/.bin/eslint .",
+    "pretest": "mongorestore --db phone-book-graphql --collection contacts --drop ./test/data/contacts.bson",
+    "test": "./node_modules/.bin/mocha --exit",
+    "start": "node -r esm src/server.js",
+    "dev": "nodemon -r esm src/server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "author": "Matheus Seabra",
+  "license": "ISC",
+  "mocha": {
+    "require": [
+      "esm"
+    ]
+  },
+  "dependencies": {
+    "apollo-server": "^2.17.0",
+    "bcrypt": "^5.0.0",
+    "esm": "^3.2.25",
+    "graphql": "^15.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27",
+    "snyk": "^1.425.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.2.3",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.6",
+    "start-server-and-test": "^1.11.2",
+    "supertest": "^4.0.2"
+  },
+  "snyk": true
+}

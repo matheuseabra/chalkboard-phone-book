@@ -1,0 +1,44 @@
+type Contact {
+    id: ID!
+    name: String!
+    email: String
+    phone: String!
+    mobilephone: String
+    mailingAddress: String
+}
+
+type User {
+    email: String!
+    password: String!
+}
+
+type AuthToken {
+    user: User!
+    token: String!
+}
+
+type Query {
+    contacts(skip: Int, first: Int!): [Contact!]!
+    contact(id: ID!): Contact
+}
+
+type Mutation {
+    login(email: String!, password: String!): AuthToken!
+    register(email: String!, password: String!): User!
+    createContact(
+        name: String!,
+        email: String,
+        phone: String!,
+        mobilephone: String,
+        mailingAddress: String
+    ): Contact
+    updateContact(
+        id: ID!,
+        name: String,
+        email: String,
+        phone: String,
+        mobilephone: String,
+        mailingAddress: String
+    ): Contact
+    deleteContact(id: ID!): Contact
+}
